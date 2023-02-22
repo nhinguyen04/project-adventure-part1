@@ -44,8 +44,15 @@ class Room {
     }
 
     getItemByName(name) {
+        let itemIndex;
 
-        // Fill this in
+        for (let i = 0; i < this.items.length; i++) {
+            const item = this.items[i];
+            if (item.name === name) { itemIndex = i; }
+        }
+
+        const item = this.items.splice(itemIndex, 1);
+        return item[0];
     }
 
 }
